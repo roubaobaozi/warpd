@@ -1,22 +1,22 @@
-# What
+# What, Colemak style
 
-A modal keyboard driven interface for mouse manipulation.
+A modal keyboard driven interface for mouse manipulation, Colemak style.
 
-# Demo
+# Demo, Colemak style
 
-## Hint Mode `Alt-Meta-x`
+## Hint Mode `Alt-Meta-x`, Colemak style
 
 <p align="center">
 <img src="demo/hints.gif" height="400px"/>
 </p>
 
-## Grid Mode `Alt-Meta-g`
+## Grid Mode `Alt-Meta-g`, Colemak style
 
 <p align="center">
 <img src="demo/warp.gif" height="400px"/>
 </p>
 
-## Normal Mode `Alt-Meta-c`
+## Normal Mode `Alt-Meta-c`, Colemak style
 
 <p align="center">
 <img src="demo/discrete.gif" height="400px"/>
@@ -25,6 +25,8 @@ A modal keyboard driven interface for mouse manipulation.
 
 
 # Dependencies
+
+If you haven't caught on by now, Colemak would be good here. All the keys would feel pretty jank if you weren't on Colemak. You could use the [original warpd](https://github.com/rvaiya/warpd) if you were after qwerty+vim style.
 
 ## X
 
@@ -56,7 +58,7 @@ See the LIMITATIONS section of the man page for more details.
 
 Make sure you have the appropriate dependencies for your system:
 
-E.G 
+E.G
 
 ## debian/ubuntu (X):
 
@@ -104,23 +106,23 @@ disabled in order for warpd to work properly.
 
 # Quickstart
 
-1. Run `warpd` 
+1. Run `warpd`
 
 ## Hint Mode
 2. Press `A-M-x` (`alt+meta+x`) to generate a list of hints
 3. Enter the key sequence associated with the desired target to warp the pointer to that location and enter normal mode.
-4. Use the normal mode movement keys to select the final desination (see Normal Mode). 
+4. Use the normal mode movement keys to select the final desination (see Normal Mode).
 
 ## Grid Mode
 2. Press `A-M-g` (meta is the command key) to activate the warping process.
-3. Use `u`,`i`,`j`,`k` to repeatedly navigate to different quadrants.
-4. Press `m` to left click, `,` to middle click or `.` to right click. 
+3. Use `m`,`,`,`.`,`/` to repeatedly navigate to different quadrants.
+4. Press `l` to left click, `j` to middle click or `;` to right click.
 5. See Normal Mode
 
 ## Normal Mode
 2. Press `A-M-c` to activate normal mode.
-3. Use the normal movement keys (default `hjkl`) to adjust the cursor.
-4. Press `m` to left click, `,` to middle click or `.` to right click. 
+3. Use the normal movement keys (default `neio`) to adjust the cursor.
+4. Press `l` to left click, `j` to middle click or `;` to right click.
 5. Press `escape` to quit.
 
 A drag movement can be simulated from any of the above modes by focusing on the

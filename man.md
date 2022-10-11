@@ -48,7 +48,7 @@ Mode Flags:
 
 warpd has three main modes which can be used to manipulate the pointer. The
 primary mode is called 'normal mode' (A-M-c) and facilitates local pointer
-movement using vi-like bindings (_h_ _j_ _k_ _l_). The other two modes, *hint*
+movement using Colemak-like bindings (_n_ _e_ _i_ _o_). The other two modes, *hint*
 and *grid* mode are used to effect larger movements across the screen and are
 expected to be used in combination with normal mode to achieve the desired end.
 
@@ -57,7 +57,7 @@ the start of a text region before starting a drag operation (_v_) and
 ultimately using normal mode to complete the selection. If the selection is a
 large body of text, it may be desirable to activate grid (_g_) or hint (_x_)
 mode for a second time to warp the pointer to the desired region's terminal
-point.  
+point.
 
 In its simplest form, warpd can be used as a poor man's xdotool (--move/--click).
 
@@ -68,12 +68,12 @@ A description of each mode follows (see also _USAGE_NOTES_):
 This is the default mode (and the endpoint of both grid and normal mode) which
 is designed for short distance pointer manipulation. It is particularly useful
 for manipulating popup menus and selecting text (see _Dragging_). The default
-behaviour is vi-like. Pressing the mapped directional keys (default hjkl) moves
+behaviour is vi-like. Pressing the mapped directional keys (default neio) moves
 the cursor in a continuous fashion, but the pointer can also be warped to the edges
-of the screen using the home (_H_), middle (_M_), and last (_L_) mappings.
+of the screen using the top (_E_), middle (_H_), and bottom (_I_) mappings.
 Finally, a numeric multiplier can be supplied to the
 directional keys as an input prefix in order to move the cursor by a
-proportional increment in the given direction (e.g 10j moves 10 units down). 
+proportional increment in the given direction (e.g 10i moves 10 units down).
 
 ## Hint Mode (A-M-x or simply 'x' within normal mode)
 
@@ -95,7 +95,7 @@ the author's opinion) superior to grid mode for quickly pinpointing elements.
 For finer movements, a two phase hint mode can be activated by pressing 'X'
 within normal mode.
 
-## History Mode (';' within normal mode)
+## History Mode ('h' within normal mode)
 
 Identical to hint mode but exclusively displays hints over previously
 selected targets.
@@ -113,12 +113,12 @@ E.G
 
 ```
          +--------+--------+            +--------+--------+
-         |        |        |            |  u |  i |       |
-         |   u    |   i    |            |----m----+       |
- M-x     |        |        |     u      |  j |  k |       |
+         |        |        |            |  m |  , |       |
+         |   m    |   ,    |            |----m----+       |
+ M-x     |        |        |     m      |  . |  / |       |
 ----->   +--------m--------+   ----->   +---------+       |
          |        |        |            |                 |
-         |   j    |   k    |            |                 |
+         |   .    |   /    |            |                 |
          |        |        |            |                 |
          +--------+--------+            +--------+--------+
 ```
@@ -158,7 +158,7 @@ draw operations to improve performance.
 
 # CONFIG OPTIONS
 
-The program can be modified by placing configuration options in 
+The program can be modified by placing configuration options in
 *~/.config/warpd/config*, a complete list of which can be obtained
 with _--list-options_.
 
@@ -168,7 +168,7 @@ Each option must be specified on its own line and have the format:
 
 ## RULES
 
-- Options which expect one or more keys may be specified multiple times, in which case all accepted mappings are interchangeable. 
+- Options which expect one or more keys may be specified multiple times, in which case all accepted mappings are interchangeable.
 
 - Options which accept multiple keys (e.g _buttons_) expect each key to be separated by a space.
 
@@ -212,8 +212,8 @@ taken by the script.
 
 ## Examples
 
-	# Prompt the user for a target using two stage hint mode and 
-	# left click on the result. 
+	# Prompt the user for a target using two stage hint mode and
+	# left click on the result.
 	#
 	# This particular example can be achieved more concisely with:
 	#
@@ -231,7 +231,7 @@ taken by the script.
 	# Prompt the user for one of the recorded hints and click on the
 	# result.
 
-	warpd --click 1 --query < hints 
+	warpd --click 1 --query < hints
 
 
 # USAGE NOTES
@@ -250,7 +250,7 @@ _r_. Once you finally wish to type something, you can do _x fx n_ to focus on
 the UI element, click, and exit.
 
 Conversely, warpd can complement an input heavy workflow with its oneshot
-functionality and dedicated activation keys (E.G _n_, _A-M-l_, _A-M-x_, etc).  
+functionality and dedicated activation keys (E.G _n_, _A-M-l_, _A-M-x_, etc).
 
 It is important to note that warpd is not intended to replace mouse heavy
 workflows, and will likely always be inferior for rapid precise local
